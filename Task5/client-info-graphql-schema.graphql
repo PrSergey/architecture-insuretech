@@ -1,0 +1,175 @@
+# Основная схема GraphQL для сервиса управления клиентскими данными
+
+type Query {
+  # Получить информацию о клиенте по ID
+  client(id: ID!): Client
+
+  # Получить список клиентов с возможностью фильтрации
+  clients(filter: ClientFilter, limit: Int = 10, offset: Int = 0): [Client!]!
+
+  # Получить документы клиента напрямую
+  clientDocuments(clientId: ID!): [Document!]!
+
+  # Получить родственников клиента напрямую
+  clientRelatives(clientId: ID!): [Relative!]!
+}
+
+# Основная сущность клиента
+type Client {
+  id: ID!
+  name: String!
+  age: Int
+  # Связанные документы клиента (ленивая загрузка)
+  documents: [Document!]!
+  # Связанные родственники клиента (ленивая загрузка)
+  relatives: [Relative!]!
+  # Дополнительные поля для будущего расширения
+  email: String
+  phone: String
+  address: Address
+  createdAt: String
+  updatedAt: String
+}
+
+# Документы клиента
+type Document {
+  id: ID!
+  type: DocumentType!
+  number: String!
+  issueDate: String!
+  expiryDate: String
+  # Обратная связь с клиентом
+  client: Client!
+}
+
+# Типы документов
+enum DocumentType {
+  PASSPORT
+  DRIVERS_LICENSE
+  INSURANCE_POLICY
+  BIRTH_CERTIFICATE
+  MARRIAGE_CERTIFICATE
+  OTHER
+}
+
+# Родственники клиента
+type Relative {
+  id: ID!
+  relationType: RelationType!
+  name: String!
+  age: Int
+  # Обратная связь с клиентом
+  client: Client!
+  # Если родственник тоже является клиентом
+  relativeClient: Client
+}
+
+# Типы родственных связей
+enum RelationType {
+  SPOUSE
+  CHILD
+  PARENT
+  SIBLING
+  OTHER
+}
+
+# Адрес клиента
+type Address {
+  street: String
+  city: String
+  region: String
+  postalCode: String
+  country: String
+}
+
+# Фильтр для поиска клиентов
+input ClientFilter {
+  name: String
+  ageFrom: Int
+  ageTo: Int
+  hasDocuments: Boolean
+  documentType: DocumentType
+}
+
+# Мутации для изменения данных
+type Mutation {
+  # Создать нового клиента
+  createClient(input: CreateClientInput!): Client!
+
+  # Обновить информацию о клиенте
+  updateClient(id: ID!, input: UpdateClientInput!): Client!
+
+  # Добавить документ клиенту
+  addDocument(clientId: ID!, input: CreateDocumentInput!): Document!
+
+  # Обновить документ
+  updateDocument(id: ID!, input: UpdateDocumentInput!): Document!
+
+  # Добавить родственника
+  addRelative(clientId: ID!, input: CreateRelativeInput!): Relative!
+
+  # Обновить информацию о родственнике
+  updateRelative(id: ID!, input: UpdateRelativeInput!): Relative!
+}
+
+# Входные типы для мутаций
+input CreateClientInput {
+  name: String!
+  age: Int
+  email: String
+  phone: String
+  address: AddressInput
+}
+
+input UpdateClientInput {
+  name: String
+  age: Int
+  email: String
+  phone: String
+  address: AddressInput
+}
+
+input CreateDocumentInput {
+  type: DocumentType!
+  number: String!
+  issueDate: String!
+  expiryDate: String
+}
+
+input UpdateDocumentInput {
+  type: DocumentType
+  number: String
+  issueDate: String
+  expiryDate: String
+}
+
+input CreateRelativeInput {
+  relationType: RelationType!
+  name: String!
+  age: Int
+  relativeClientId: ID
+}
+
+input UpdateRelativeInput {
+  relationType: RelationType
+  name: String
+  age: Int
+  relativeClientId: ID
+}
+
+input AddressInput {
+  street: String
+  city: String
+  region: String
+  postalCode: String
+  country: String
+}
+
+# Подписки для real-time обновлений (опционально)
+type Subscription {
+  # Подписка на изменения клиента
+  clientUpdated(clientId: ID!): Client!
+
+  # Подписка на новые документы клиента
+  documentAdded(clientId: ID!): Document!
+}
