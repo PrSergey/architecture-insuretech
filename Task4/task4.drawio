@@ -1,0 +1,381 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 YaBrowser/24.7.0.0 Safari/537.36" version="24.7.8">
+<diagram id="51zmUan4mFf6pz3q3UUt" name="InsureTech-OSAGO">
+<mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1600" pageHeight="1600" math="0" shadow="0">
+<root>
+<mxCell id="0"/>
+<mxCell id="1" parent="0"/>
+
+<!-- System Boundary -->
+<object placeholders="1" c4Name="InsureTech Prod" c4Type="SystemScopeBoundary" c4Application="Event-Driven Architecture + OSAGO Real-time" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="system-boundary">
+<mxCell style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="50" y="130" width="1500" height="1400" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- External Users and Systems -->
+<object placeholders="1" c4Name="Клиент" c4Type="Person" c4Description="Частный клиент, оформляющий ОСАГО онлайн" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="client">
+<mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" vertex="1" parent="1">
+<mxGeometry x="300" y="-100" width="200" height="180" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="Системы партнёров" c4Type="Software System" c4Description="B2B партнёры, интегрирующие страховые услуги" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="partner-systems">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="800" y="-100" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="Платёжный сервис" c4Type="Software System" c4Description="Внешний платёжный сервис для проведения оплаты" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="payment-system">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1200" y="-100" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Multiple Insurance Companies for OSAGO -->
+<object placeholders="1" c4Name="Страховые компании ОСАГО" c4Type="Software System" c4Description="Страховые компании с REST API для ОСАГО: POST /osago/application, GET /osago/offer/{id}" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="osago-insurance-1">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1600" y="300" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="Страховые компании ОСАГО" c4Type="Software System" c4Description="Дополнительные страховые компании с OSAGO API" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="osago-insurance-2">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1610" y="310" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="Страховые компании ОСАГО" c4Type="Software System" c4Description="Все доступные страховые компании с единообразным OSAGO API" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="osago-insurance-3">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=9;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1620" y="320" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Standard Insurance Companies (existing) -->
+<object placeholders="1" c4Name="Системы страховых компаний" c4Type="Software System" c4Description="Стандартные страховые компании для других продуктов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="standard-insurance">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1600" y="500" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Frontend with WebSocket -->
+<object placeholders="1" c4Type="InsureTech Web" c4Container="Container" c4Technology="JavaScript, React + WebSocket" c4Description="SPA с real-time ОСАГО интерфейсом. WebSocket соединение для мгновенного отображения предложений от страховых компаний" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="web-app">
+<mxCell style="shape=mxgraph.c4.webBrowserContainer2;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#118ACD;fillColor=#23A2D9;strokeColor=#118ACD;strokeColor2=#0E7DAD;fontSize=12;fontColor=#ffffff;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
+<mxGeometry x="100" y="180" width="280" height="160" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Core Application Services -->
+<object placeholders="1" c4Name="core-app" c4Type="Container" c4Technology="Kotlin, SpringBoot + WebSocket" c4Description="Основное приложение с WebSocket поддержкой для ОСАГО: HTTP API для создания заявок, WebSocket для real-time обновлений, интеграция с osago-aggregator" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="core-app">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="100" y="420" width="280" height="160" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="client-info" c4Type="Container" c4Technology="Kotlin, SpringBoot" c4Description="Сервис управления клиентскими данными (без изменений)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="client-info">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="450" y="420" width="240" height="140" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="ins-product-aggregator" c4Type="Container" c4Technology="Kotlin, SpringBoot" c4Description="Агрегатор продуктов (без изменений)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ins-product-aggregator">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="730" y="420" width="240" height="140" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- NEW: OSAGO Aggregator -->
+<object placeholders="1" c4Name="osago-aggregator" c4Type="Container" c4Technology="Kotlin, SpringBoot + Async" c4Description="НОВЫЙ сервис для ОСАГО: Async REST API для core-app, параллельные запросы к страховым компаниям, WebSocket уведомления, in-memory хранение заявок (60 сек TTL)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="osago-aggregator">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#4CAF50;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#388E3C;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1010" y="420" width="280" height="160" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="ins-comp-settlement" c4Type="Container" c4Technology="Kotlin, SpringBoot" c4Description="Сервис для взаиморасчетов (без изменений)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ins-comp-settlement">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1330" y="420" width="200" height="140" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Event Streaming Platform (unchanged) -->
+<object placeholders="1" c4Name="Apache Kafka" c4Type="Container" c4Technology="Event Streaming Platform" c4Description="Центральная шина событий (без изменений для ОСАГО)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="kafka">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#FF8A65;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#FF5722;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="520" y="650" width="280" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Cache Layer -->
+<object placeholders="1" c4Name="Redis Cache" c4Type="Container" c4Technology="In-Memory Cache" c4Description="Кэш продуктов + временное хранение ОСАГО заявок" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="redis-cache">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#FFCDD2;fontColor=#000000;align=center;arcSize=10;strokeColor=#F44336;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="100" y="650" width="280" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- NEW: OSAGO In-Memory Store -->
+<object placeholders="1" c4Name="OSAGO Memory Store" c4Type="Container" c4Technology="Hazelcast / In-Memory Grid" c4Description="Распределенное in-memory хранилище для ОСАГО заявок и предложений. TTL: 60 секунд. Поддержка 2500+ одновременных сессий" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="osago-memory-store">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#C8E6C9;fontColor=#000000;align=center;arcSize=10;strokeColor=#4CAF50;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1010" y="650" width="280" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Background Services -->
+<object placeholders="1" c4Name="Background Scheduler" c4Type="Container" c4Technology="Spring Batch" c4Description="Планировщик задач (без изменений)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="scheduler">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#FFF8E1;fontColor=#000000;align=center;arcSize=10;strokeColor=#FFA000;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="1370" y="650" width="140" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Databases (Separated) -->
+<object placeholders="1" c4Type="core-db" c4Container="Container" c4Technology="PostgreSQL" c4Description="БД core-app + ОСАГО заявки для долгосрочного хранения" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="core-db">
+<mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
+<mxGeometry x="100" y="860" width="280" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Type="client-info-db" c4Container="Container" c4Technology="PostgreSQL" c4Description="БД client-info (без изменений)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="client-info-db">
+<mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
+<mxGeometry x="450" y="860" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Type="products-db" c4Container="Container" c4Technology="PostgreSQL" c4Description="БД ins-product-aggregator (без изменений)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="products-db">
+<mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
+<mxGeometry x="730" y="860" width="240" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Type="ins-comp-settlement-db" c4Container="Container" c4Technology="PostgreSQL" c4Description="БД ins-comp-settlement (без изменений)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="settlement-db">
+<mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
+<mxGeometry x="1330" y="860" width="200" height="120" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Resilience Pattern Icons -->
+<!-- TimeOut -->
+<object placeholders="1" c4Name="Timeout 60s" c4Type="Resilience Pattern" c4Description="Максимальное время ожидания ответа от страховых компаний" label="&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;[%c4Type%]&lt;/div&gt;" id="timeout-pattern">
+<mxCell style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=quota;" vertex="1" parent="1">
+<mxGeometry x="1460" y="300" width="30" height="28.8" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Circuit Breaker -->
+<object placeholders="1" c4Name="Circuit Breaker" c4Type="Resilience Pattern" c4Description="Защита от сбоев внешних API" label="&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;[%c4Type%]&lt;/div&gt;" id="circuit-breaker-pattern">
+<mxCell style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=c_role;" vertex="1" parent="1">
+<mxGeometry x="1430" y="300" width="30" height="28.8" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Retry -->
+<object placeholders="1" c4Name="Retry 3x" c4Type="Resilience Pattern" c4Description="Повторные попытки при временных сбоях" label="&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;[%c4Type%]&lt;/div&gt;" id="retry-pattern">
+<mxCell style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=deploy;" vertex="1" parent="1">
+<mxGeometry x="1490" y="300" width="30" height="28.8" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- Rate Limiting -->
+<object placeholders="1" c4Name="Rate Limiter" c4Type="Resilience Pattern" c4Description="Ограничение нагрузки на внешние API" label="&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;[%c4Type%]&lt;/div&gt;" id="rate-limiter-pattern">
+<mxCell style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=job;" vertex="1" parent="1">
+<mxGeometry x="1520" y="300" width="30" height="28.8" as="geometry"/>
+</mxCell>
+</object>
+
+<!-- User Interactions -->
+<object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Клиент заходит на сайт для оформления ОСАГО" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="user-web-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#1976D2;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="client" target="web-app">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="400" y="100" as="sourcePoint"/>
+<mxPoint x="640" y="100" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- WebSocket Connection (NEW) -->
+<object placeholders="1" c4Type="Relationship" c4Technology="WebSocket" c4Description="Real-time обновления ОСАГО предложений" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="websocket-conn">
+<mxCell style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=3;endFill=1;startFill=1;strokeColor=#4CAF50;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="web-app" target="core-app">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="240" y="360" as="sourcePoint"/>
+<mxPoint x="480" y="360" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Core App to OSAGO Aggregator (NEW) -->
+<object placeholders="1" c4Type="Relationship" c4Technology="Async REST + WebSocket" c4Description="POST /osago/applications (async), WebSocket уведомления о новых предложениях" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-osago-conn">
+<mxCell style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=3;endFill=1;startFill=1;strokeColor=#4CAF50;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="core-app" target="osago-aggregator">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="380" y="500" as="sourcePoint"/>
+<mxPoint x="1010" y="500" as="targetPoint"/>
+<Array as="points">
+<mxPoint x="680" y="500"/>
+<mxPoint x="680" y="500"/>
+</Array>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- OSAGO Aggregator to Insurance Companies (NEW) -->
+<object placeholders="1" c4Type="Relationship" c4Technology="REST API + All Resilience Patterns" c4Description="Параллельные запросы с Timeout 60s, Circuit Breaker, Retry 3x, Rate Limiter" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="osago-insurance-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=3;endFill=1;strokeColor=#FF5722;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="osago-aggregator" target="osago-insurance-1">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="1290" y="500" as="sourcePoint"/>
+<mxPoint x="1600" y="360" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- OSAGO Aggregator to Memory Store -->
+<object placeholders="1" c4Type="Relationship" c4Technology="In-Memory Access" c4Description="Хранение заявок и предложений с TTL 60 сек" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="osago-memory-conn">
+<mxCell style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=3;endFill=1;startFill=1;strokeColor=#4CAF50;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="osago-aggregator" target="osago-memory-store">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="1150" y="580" as="sourcePoint"/>
+<mxPoint x="1150" y="650" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Core App to Redis Cache -->
+<object placeholders="1" c4Type="Relationship" c4Technology="Cache Access" c4Description="Кэширование продуктов и данных" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-redis-conn">
+<mxCell style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;startFill=1;strokeColor=#F44336;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="core-app" target="redis-cache">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="240" y="580" as="sourcePoint"/>
+<mxPoint x="240" y="650" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Web App to Client Info (existing) -->
+<object placeholders="1" c4Type="Relationship" c4Technology="REST" c4Description="Управление данными клиентов" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="web-client-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="web-app" target="client-info">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="380" y="340" as="sourcePoint"/>
+<mxPoint x="570" y="420" as="targetPoint"/>
+<Array as="points">
+<mxPoint x="570" y="360"/>
+</Array>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Partner Systems to Core App -->
+<object placeholders="1" c4Type="Relationship" c4Technology="REST" c4Description="B2B интеграция (включая ОСАГО)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="partner-core-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#4CAF50;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="partner-systems" target="core-app">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="920" y="20" as="sourcePoint"/>
+<mxPoint x="240" y="420" as="targetPoint"/>
+<Array as="points">
+<mxPoint x="920" y="60"/>
+<mxPoint x="240" y="60"/>
+</Array>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Core App to Payment -->
+<object placeholders="1" c4Type="Relationship" c4Technology="HTTP" c4Description="Оплата страховок (включая ОСАГО)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-payment-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="core-app" target="payment-system">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="380" y="420" as="sourcePoint"/>
+<mxPoint x="1320" y="20" as="targetPoint"/>
+<Array as="points">
+<mxPoint x="240" y="100"/>
+<mxPoint x="1320" y="100"/>
+</Array>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Standard Insurance Integration (existing) -->
+<object placeholders="1" c4Type="Relationship" c4Technology="REST API + Circuit Breaker" c4Description="Стандартные страховые продукты (фоновая синхронизация)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="aggregator-insurance-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#9E9E9E;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;dashed=1;dashPattern=4 4;" edge="1" parent="1" source="ins-product-aggregator" target="standard-insurance">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="970" y="490" as="sourcePoint"/>
+<mxPoint x="1600" y="560" as="targetPoint"/>
+<Array as="points">
+<mxPoint x="1400" y="490"/>
+<mxPoint x="1400" y="560"/>
+</Array>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Database Connections -->
+<object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Работа с данными полисов + ОСАГО заявки" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-db-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#0277BD;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="core-app" target="core-db">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="240" y="580" as="sourcePoint"/>
+<mxPoint x="240" y="860" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Работа с данными клиентов" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="client-db-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#0277BD;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="client-info" target="client-info-db">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="570" y="560" as="sourcePoint"/>
+<mxPoint x="570" y="860" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Работа с данными продуктов" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="aggregator-db-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#0277BD;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="ins-product-aggregator" target="products-db">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="850" y="560" as="sourcePoint"/>
+<mxPoint x="850" y="860" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Работа с данными отчетности" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="settlement-db-conn">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#0277BD;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="ins-comp-settlement" target="settlement-db">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="1430" y="560" as="sourcePoint"/>
+<mxPoint x="1430" y="860" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Event Publishing (existing Kafka flows) -->
+<object placeholders="1" c4Type="Relationship" c4Technology="Event Publishing" c4Description="События создания/изменения полисов" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-kafka-pub">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#FF5722;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="core-app" target="kafka">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="380" y="580" as="sourcePoint"/>
+<mxPoint x="520" y="650" as="targetPoint"/>
+<Array as="points">
+<mxPoint x="380" y="620"/>
+<mxPoint x="580" y="620"/>
+</Array>
+</mxGeometry>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Type="Relationship" c4Technology="Event Consumption" c4Description="Получение событий для отчетности" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="kafka-settlement-cons">
+<mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#FF5722;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="kafka" target="ins-comp-settlement">
+<mxGeometry width="240" relative="1" as="geometry">
+<mxPoint x="800" y="710" as="sourcePoint"/>
+<mxPoint x="1330" y="490" as="targetPoint"/>
+<Array as="points">
+<mxPoint x="1100" y="710"/>
+<mxPoint x="1100" y="620"/>
+<mxPoint x="1430" y="620"/>
+</Array>
+</mxGeometry>
+</mxCell>
+</object>
+
+<!-- Architecture Decision Notes -->
+<object placeholders="1" c4Name="АРХИТЕКТУРНЫЕ РЕШЕНИЯ ДЛЯ ОСАГО" c4Type="Decision Log" c4Description="1. OSAGO-AGGREGATOR НЕ ИМЕЕТ ПЕРСИСТЕНТНОЙ БД - использует только in-memory store (Hazelcast) с TTL 60 сек для временного хранения заявок и предложений. 2. API: POST /osago/applications (async) - создает заявку, возвращает applicationId и WebSocket endpoint. GET /osago/offers/{applicationId} - получение текущих предложений (fallback для WebSocket). 3. ИНТЕГРАЦИЯ: WebSocket для real-time уведомлений + async REST для создания заявок. Пуш-модель вместо polling. 4. RESILIENCE PATTERNS: - Timeout 60s на все внешние вызовы - Circuit Breaker с fail-fast - Retry 3x с exponential backoff - Rate Limiter для защиты внешних API 5. МАСШТАБИРУЕМОСТЬ: In-memory grid поддерживает 2500+ одновременных сессий, WebSocket connections балансируются между экземплярами core-app через sticky sessions." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="architecture-decisions">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E8F5E9;fontColor=#000000;align=left;arcSize=10;strokeColor=#4CAF50;metaEdit=1;resizable=0;verticalAlign=top;spacingTop=10;spacingLeft=10;fontSize=10;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="100" y="1080" width="680" height="320" as="geometry"/>
+</mxCell>
+</object>
+
+<object placeholders="1" c4Name="FLOW ДИАГРАММА ОСАГО" c4Type="Process Flow" c4Description="1. Клиент заполняет форму ОСАГО в веб-интерфейсе 2. WebApp отправляет POST /osago/applications в core-app 3. core-app валидирует данные и отправляет async запрос в osago-aggregator 4. osago-aggregator сохраняет заявку в Hazelcast и ПАРАЛЛЕЛЬНО отправляет запросы во ВСЕ страховые компании 5. При получении предложения от страховой: - Сохраняет в Hazelcast - Отправляет WebSocket уведомление в core-app - core-app транслирует в WebApp - Клиент МГНОВЕННО видит новое предложение 6. Процесс продолжается 60 секунд или до получения всех ответов 7. Клиент выбирает лучшее предложение и оформляет полис" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="osago-flow">
+<mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E3F2FD;fontColor=#000000;align=left;arcSize=10;strokeColor=#1976D2;metaEdit=1;resizable=0;verticalAlign=top;spacingTop=10;spacingLeft=10;fontSize=10;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
+<mxGeometry x="820" y="1080" width="680" height="320" as="geometry"/>
+</mxCell>
+</object>
+
+</root>
+</mxGraphModel>
+</diagram>
+</mxfile>
